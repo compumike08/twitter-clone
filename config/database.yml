@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: twitter-clone_development
+  username: twitter_clone
+  password: <%= ENV['TWITTER-CLONE_DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +60,8 @@ development:
 test:
   <<: *default
   database: twitter-clone_test
+  username: twitter_clone
+  password: <%= ENV['TWITTER-CLONE_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,5 +85,5 @@ test:
 production:
   <<: *default
   database: twitter-clone_production
-  username: twitter-clone
+  username: twitter_clone
   password: <%= ENV['TWITTER-CLONE_DATABASE_PASSWORD'] %>
