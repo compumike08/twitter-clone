@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/compumike08/twitter-clone/issues"
   },
-  "homepage": "https://github.com/compumike08/twitter-clone#readme"
+  "homepage": "https://github.com/compumike08/twitter-clone#readme",
+  "devDependencies": {
+    "webpack": "^1.13.3"
+  }
 }
