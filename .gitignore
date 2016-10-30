@@ -1,5 +1,6 @@
 # Ignore webpack
 bundle.js
+bundle.js.map
 
 # Ignore JetBrains
 .idea/
