@@ -1,3 +1,6 @@
+# Ignore webpack
+bundle.js
+
 # Ignore JetBrains
 .idea/
 *.iml
