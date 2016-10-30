@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/compumike08/twitter-clone#readme",
   "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.7",
     "webpack": "^1.13.3"
   }
 }
