@@ -12,13 +12,29 @@ class Main extends React.Component {
     super(props);
 
     this.state = { tweetsList: mockTweets };
+
+    //Bind 'this' context to component functions
+    this.addTweet = this.addTweet.bind(this);
   }
 
+  addTweet(tweetToAdd) {
+    let newTweetsList = this.state.tweetsList;
+
+    newTweetsList.unshift({
+      id: Date.now(),
+      name: 'Guest',
+      body: tweetToAdd
+    });
+
+    this.setState({
+      tweetsList: newTweetsList
+    });
+  }
 
   render() {
       return (
         <div className="container">
-          <TweetBox />
+          <TweetBox sendTweet={this.addTweet} />
           <TweetsList tweets={this.state.tweetsList} />
         </div>
       );
