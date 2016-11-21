@@ -1,0 +1,30 @@
+{
+  "name": "twitter-clone",
+  "version": "1.0.0",
+  "description": "Twitter clone, written in React, Flux, and Rails",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack-watch": "webpack -w -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compumike08/twitter-clone.git"
+  },
+  "author": "Michael Hadjiosif",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/compumike08/twitter-clone/issues"
+  },
+  "homepage": "https://github.com/compumike08/twitter-clone#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.3"
+  }
+}
