@@ -11,6 +11,12 @@ class Main extends React.Component {
     this.addTweet = this.addTweet.bind(this);
   }
 
+  componentDidMount(){
+      $.ajax("/tweets")
+          .success(data => this.setState({tweetsList: data}))
+          .error(error => console.log(error));
+  }
+
   addTweet(tweetToAdd) {
     let newTweetsList = this.state.tweetsList;
 
