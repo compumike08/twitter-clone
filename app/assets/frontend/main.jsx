@@ -18,17 +18,24 @@ class Main extends React.Component {
     }
 
     addTweet(tweetToAdd) {
-        let newTweetsList = this.state.tweetsList;
+        $.post("/tweets", {body: tweetToAdd})
+            .success(savedTweet => {
+                let newTweetsList = this.state.tweetsList;
 
-        newTweetsList.unshift({
-            id: Date.now(),
-            name: 'Guest',
-            body: tweetToAdd
-        });
+                newTweetsList.unshift({
+                    id: savedTweet.id,
+                    name: savedTweet.name,
+                    body: savedTweet.body,
+                    user_id: savedTweet.user_id,
+                    created_at: savedTweet.created_at,
+                    updated_at: savedTweet.updated_at
+                });
 
-        this.setState({
-            tweetsList: newTweetsList
-        });
+                this.setState({
+                    tweetsList: newTweetsList
+                });
+            })
+            .error();
     }
 
     render() {
