@@ -14,6 +14,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'react-rails', '~> 1.8.2'
 
+# Library for authentication
+gem 'devise'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
