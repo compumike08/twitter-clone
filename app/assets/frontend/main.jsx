@@ -13,8 +13,19 @@ class Main extends React.Component {
 
   componentDidMount() {
     $.ajax("/tweets")
-      .success(data => this.setState({tweetsList: data}))
+      .success(data => this.setState(this.formattedTweets(data)))
       .error(error => console.log(error));
+  }
+
+  formattedTweets(tweetsList) {
+    let formattedList = tweetsList.map(tweet => {
+      tweet.formattedDate = moment(tweet.created_at).fromNow();
+      return tweet;
+    });
+
+    return {
+      tweetsList: formattedList
+    };
   }
 
   addTweet(tweetToAdd) {
@@ -31,9 +42,7 @@ class Main extends React.Component {
           updated_at: savedTweet.updated_at
         });
 
-        this.setState({
-          tweetsList: newTweetsList
-        });
+        this.setState(this.formattedTweets(newTweetsList));
       })
       .error(error => console.log(error));
   }
