@@ -35,7 +35,7 @@ class Main extends React.Component {
                     tweetsList: newTweetsList
                 });
             })
-            .error();
+            .error(error => console.log(error));
     }
 
     render() {
