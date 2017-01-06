@@ -33,14 +33,7 @@ class Main extends React.Component {
       .success(savedTweet => {
         let newTweetsList = this.state.tweetsList;
 
-        newTweetsList.unshift({
-          id: savedTweet.id,
-          name: savedTweet.name,
-          body: savedTweet.body,
-          user_id: savedTweet.user_id,
-          created_at: savedTweet.created_at,
-          updated_at: savedTweet.updated_at
-        });
+        newTweetsList.unshift(savedTweet);
 
         this.setState(this.formattedTweets(newTweetsList));
       })
