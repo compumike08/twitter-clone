@@ -16,7 +16,6 @@ class Main extends React.Component {
     this.state = getAppState();
 
     //Bind 'this' context to component functions
-    this.addTweet = this.addTweet.bind(this);
     this._onChange = this._onChange.bind(this);
   }
 
@@ -32,22 +31,10 @@ class Main extends React.Component {
     this.setState(getAppState());
   }
 
-  addTweet(tweetToAdd) {
-    /*$.post("/tweets", {body: tweetToAdd})
-      .success(savedTweet => {
-        let newTweetsList = this.state.tweetsList;
-
-        newTweetsList.unshift(savedTweet);
-
-        this.setState(this.formattedTweets(newTweetsList));
-      })
-      .error(error => console.log(error));*/
-  }
-
   render() {
     return (
       <div className="container">
-        <TweetBox sendTweet={this.addTweet}/>
+        <TweetBox />
         <TweetsList tweets={this.state.tweetsList}/>
       </div>
     );
