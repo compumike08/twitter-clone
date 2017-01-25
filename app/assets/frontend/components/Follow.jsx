@@ -14,6 +14,7 @@ export default class Follow extends React.Component {
 
     //Bind 'this' context to component functions
     this._onChange = this._onChange.bind(this);
+    this.followClasses = this.followClasses.bind(this);
   }
   componentDidMount() {
     UserActions.getAllUsers();
@@ -28,12 +29,24 @@ export default class Follow extends React.Component {
     this.setState(getAppState());
   }
 
+  followUser(userId) {
+    UserActions.followUser(userId);
+  }
+
+  followClasses(following) {
+    return "secondary-content btn-floating " + (following ? "green" : "grey");
+  }
+
   render() {
     let users = this.state.users.map( user => {
       return (
         <li key={user.id} className="collection-item avatar">
           <img src={user.gravatar} className="circle" />
           <span className="title">{user.name}</span>
+          <a className={this.followClasses(user.following)}
+            onClick={this.followUser.bind(this, user.id)}>
+            <i className="material-icons">person_pin</i>
+          </a>
         </li>
       )
     });
