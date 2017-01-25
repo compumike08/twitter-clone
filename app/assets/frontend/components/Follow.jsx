@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import UserStore from '../stores/UserStore';
 import UserActions from '../actions/UserActions';
 
@@ -43,6 +44,7 @@ export default class Follow extends React.Component {
         <ul className="collection">
           {users}
         </ul>
+        <Link to="/">Back</Link>
       </div>
     );
   }
